@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+">
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <!-- Host Menggunakan smpt milik google, host ini dapat di sesuaikan dengan pilihan host anda, setiap email provider berbeda(Cari di internet)-->
+        
+        <!-- gmail -->
+        <property name="host" value="smtp.gmail.com"/>
+        <property name="port" value="587"/>
+        <property name="username" value="your_email@gmail.com"/>
+        <property name="password" value="your_password_gmail"/>
+        
+        
+        <!-- yahoo 
+        <property name="host" value="smtp.mail.yahoo.com"/>
+        <property name="port" value="587"/>
+        <property name="username" value="your_email@yahoo.co.id"/>
+        <property name="password" value="your_password"/>
+        -->
+        
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
