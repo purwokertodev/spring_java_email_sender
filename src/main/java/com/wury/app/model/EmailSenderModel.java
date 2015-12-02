@@ -36,7 +36,7 @@ import javax.persistence.Table;
 public class EmailSenderModel implements Serializable{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
     private String id;
     @Column(name = "alamat_email_tujuan", unique = true, nullable = false)

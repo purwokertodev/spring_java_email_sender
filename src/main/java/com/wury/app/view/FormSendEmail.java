@@ -56,6 +56,8 @@ public class FormSendEmail extends javax.swing.JInternalFrame {
             String pesan = jTextAreaPesan.getText();
 
             EmailSenderModel e = new EmailSenderModel();
+            long timeMilis = System.currentTimeMillis();
+            e.setId(String.valueOf(timeMilis));
             e.setAlamatEmailTujuan(emailTujuan);
             e.setSubject(subjek);
             e.setMessageBody(pesan);
